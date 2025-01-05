@@ -16,17 +16,18 @@ interface HeroSectionProps {
 
 const HeroSection = ({
   titles = [
-    "Full Stack Developer",
-    "UI/UX Enthusiast",
-    "Problem Solver",
-    "Tech Innovator",
+    "A Full Stack Developer",
+    "A Lifelong Learner",
+    "A Problem Solver",
+    "A Tech Innovator",
+    "A Community Builder",
   ],
-  name = "John Doe",
-  description = "Building digital experiences that make a difference. Passionate about creating elegant solutions to complex problems.",
+  name = "Emma Xing",
+  description = "CS Student at University of Waterloo. Passionate about building tech solutions that make a difference.",
   socialLinks = {
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-    email: "mailto:example@example.com",
+    github: "https://github.com/emma-x1",
+    linkedin: "https://www.linkedin.com/in/emmaxing/",
+    email: "mailto:emma.xing@uwaterloo.ca",
   },
 }: HeroSectionProps) => {
   const typewriterRef = useRef<HTMLSpanElement>(null);

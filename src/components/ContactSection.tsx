@@ -13,9 +13,9 @@ interface ContactSectionProps {
 }
 
 const ContactSection = ({
-  email = "contact@example.com",
-  phone = "+1 (555) 123-4567",
-  location = "San Francisco, CA",
+  email = "emma.xing@uwaterloo.ca",
+  phone = "(416) 918 3068)",
+  location = "Toronto, ON",
   onSubmit = () => {},
 }: ContactSectionProps) => {
   const handleSubmit = (e: React.FormEvent) => {

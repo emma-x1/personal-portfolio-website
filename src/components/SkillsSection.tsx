@@ -22,27 +22,27 @@ interface SkillsSectionProps {
 const SkillsSection = ({
   skills = [
     {
-      name: "React",
-      icon: "https://api.dicebear.com/7.x/avataaars/svg?seed=react",
-      proficiency: 90,
-      category: "Frontend",
-    },
-    {
-      name: "TypeScript",
-      icon: "https://api.dicebear.com/7.x/avataaars/svg?seed=typescript",
-      proficiency: 85,
+      name: "Python",
+      icon: "",
+      proficiency: 100,
       category: "Languages",
     },
     {
-      name: "Node.js",
-      icon: "https://api.dicebear.com/7.x/avataaars/svg?seed=nodejs",
-      proficiency: 80,
-      category: "Backend",
+      name: "HTML/CSS",
+      icon: "",
+      proficiency: 100,
+      category: "Languages",
     },
     {
-      name: "Python",
+      name: "JavaScript",
+      icon: "",
+      proficiency: 100,
+      category: "Languages",
+    },
+    {
+      name: "C",
       icon: "https://api.dicebear.com/7.x/avataaars/svg?seed=python",
-      proficiency: 75,
+      proficiency: 100,
       category: "Languages",
     },
     {
@@ -81,22 +81,11 @@ const SkillsSection = ({
                         <Tooltip>
                           <TooltipTrigger asChild>
                             <div className="flex flex-col items-center p-4 rounded-lg hover:bg-gray-50 transition-colors cursor-pointer">
-                              <img
-                                src={skill.icon}
-                                alt={skill.name}
-                                className="w-12 h-12 mb-2"
-                              />
                               <span className="text-sm font-medium">
                                 {skill.name}
                               </span>
-                              <Badge variant="secondary" className="mt-2">
-                                {skill.proficiency}%
-                              </Badge>
                             </div>
                           </TooltipTrigger>
-                          <TooltipContent>
-                            <p>Proficiency: {skill.proficiency}%</p>
-                          </TooltipContent>
                         </Tooltip>
                       </TooltipProvider>
                     ))}

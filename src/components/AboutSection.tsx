@@ -13,17 +13,16 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({
-  bio = "I am a passionate software developer with expertise in building modern web applications. With a strong foundation in frontend development and a keen eye for design, I create engaging user experiences that combine functionality with aesthetic appeal.",
+  bio = "I am a passionate software developer and data scientist. I'm completing my degree in computer science at the University of Waterloo and have experience in frontend and backend development, data analysis, and machine learning. In my spare time, I love to run, attend and run my own hackathons, and learn new technologies!",
   highlights = [
     "5+ years of experience in web development",
     "Specialized in React and TypeScript",
     "Strong focus on responsive design and accessibility",
-    "Experience with modern frontend frameworks and tools",
   ],
-  resumeUrl = "#",
-  githubUrl = "https://github.com",
-  linkedinUrl = "https://linkedin.com",
-  profileImage = "https://api.dicebear.com/7.x/avataaars/svg?seed=professional",
+  resumeUrl = "https://drive.google.com/file/d/1BWpdOBHXmjboB7NoyN2tEV86x8muUlgV/view?usp=sharing",
+  githubUrl = "https://github.com/emma-x1",
+  linkedinUrl = "https://www.linkedin.com/in/emmaxing/",
+  profileImage = "https://cloud-aseqw8z2c-hack-club-bot.vercel.app/0emmaxing.jpg",
 }: AboutSectionProps) => {
   return (
     <section className="py-20 bg-gray-50">
