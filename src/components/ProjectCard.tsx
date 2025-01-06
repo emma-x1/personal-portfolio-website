@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
-import { Project } from "/Users/emmaxing/personal-portfolio-website/src/types.tsx"; //
+import { Project } from "../types"; //
 
 interface ProjectCardProps {
   project: Project;

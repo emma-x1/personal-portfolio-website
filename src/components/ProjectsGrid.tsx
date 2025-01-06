@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { Project } from "/Users/emmaxing/personal-portfolio-website/src/types.tsx"; //
+import { Project } from "../types"; 
 
 const projects: Project[] = [
   {
