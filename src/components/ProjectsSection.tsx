@@ -1,5 +1,41 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
+
+const ProjectsSection: React.FC = () => {
+  const projects = [
+    {
+      title: 'Project 1',
+      description: 'Description 1',
+      imageUrl: 'image1.jpg',
+      technologies: ['React', 'TypeScript'],
+      githubUrl: 'https://github.com/project1',
+      liveUrl: 'https://project1.com',
+      onOpenModal: () => {}, // Ensure this property is included
+    },
+    // Other projects
+  ];
+
+  return (
+    <div>
+      {projects.map((project, index) => (
+        <ProjectCard
+          key={index}
+          title={project.title}
+          description={project.description}
+          imageUrl={project.imageUrl}
+          technologies={project.technologies}
+          githubUrl={project.githubUrl}
+          liveUrl={project.liveUrl}
+          onOpenModal={project.onOpenModal} // Ensure this property is included
+        />
+      ))}
+    </div>
+  );
+};
+
+export default ProjectsSection;
+
+/*
 import ProjectModal from "./ProjectModal";
 
 interface Project {
@@ -138,3 +174,4 @@ const ProjectsSection = ({
 };
 
 export default ProjectsSection;
+*/

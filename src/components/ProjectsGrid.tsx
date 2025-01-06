@@ -1,21 +1,84 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
-import ProjectModal from "./ProjectModal";
 
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  technologies: string[];
-  imageUrl: string;
-  githubUrl: string;
-  liveUrl: string;
-}
+const ProjectsGrid: React.FC = () => {
+  const [selectedProject, setSelectedProject] = useState(null);
 
-interface ProjectsGridProps {
-  projects?: Project[];
-}
+  const projects = [
+    {
+      id: 1,
+      title: 'Project 1',
+      description: 'Description 1',
+      imageUrl: 'image1.jpg',
+      technologies: ['React', 'TypeScript'],
+      githubUrl: 'https://github.com/project1',
+      liveUrl: 'https://project1.com',
+      onOpenModal: () => setSelectedProject(projects[0]), // Ensure this property is included
+    },
 
+    {
+      id: 2,
+      title: 'Project 2',
+      description: 'Description 2',
+      imageUrl: 'https://via.placeholder.com/300',
+      technologies: ['JavaScript', 'CSS'],
+      githubUrl: 'https://github.com/project2',
+      liveUrl: 'https://project2.com',
+    },
+    // Add more projects as needed
+    // Other projects
+  ];
+
+  return (
+    <div>
+      <h1 className="text-center my-8 text-4xl font-bold">Projects</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 p-4">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            imageUrl={project.imageUrl}
+            technologies={project.technologies}
+            githubUrl={project.githubUrl}
+            liveUrl={project.liveUrl}
+            onOpenModal={() => setSelectedProject(project)}
+          />
+        ))}
+      </div>
+      {selectedProject && (
+        <>
+          <div className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={() => setSelectedProject(null)} />
+          <div className="fixed inset-0 flex items-center justify-center z-50">
+            <div className="bg-white p-8 rounded-lg shadow-lg max-w-sm mx-auto px-8">
+              <h2 className="text-2xl font-bold">{selectedProject.title}</h2>
+              <p className="mt-4">{selectedProject.description}</p>
+              <img src={selectedProject.imageUrl} alt={selectedProject.title} className="w-full h-auto mt-4" />
+              <div className="mt-4">
+                {selectedProject.technologies.map((tech) => (
+                  <Badge key={tech} className="mr-2">{tech}</Badge>
+                ))}
+              </div>
+              <div className="mt-4 flex gap-2">
+                <Button as="a" href={selectedProject.githubUrl} target="_blank">
+                  <Github className="w-4 h-4 mr-2" /> View on GitHub
+                </Button>
+                <Button as="a" href={selectedProject.liveUrl} target="_blank">
+                  <ExternalLink className="w-4 h-4 mr-2" /> View Live
+                </Button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
+export default ProjectsGrid;
+
+
+/*
 const ProjectsGrid = ({
   projects = [
     {
@@ -87,3 +150,4 @@ const ProjectsGrid = ({
 };
 
 export default ProjectsGrid;
+*/

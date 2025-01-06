@@ -4,6 +4,64 @@ import { Badge } from "./ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 
+
+/*
+interface ProjectCardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  technologies: string[];
+  githubUrl: string;
+  liveUrl?: string;
+  onOpenModal?: () => void;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ title, description, imageUrl, technologies, githubUrl, liveUrl, onOpenModal }) => {
+  return (
+    <div className="border border-gray-300 rounded-lg overflow-hidden transition-transform transform hover:scale-105 cursor-pointer" onClick={onOpenModal}>
+      <div className="p-2">
+        <h2 className="text-lg font-bold">{title}</h2>
+        <p className="text-gray-700 text-sm">{description}</p>
+        <img src={imageUrl} alt={title} className="w-full h-auto mt-2" />
+        <div className="mt-2">
+          {technologies.map((tech) => (
+            <Badge key={tech} className="mr-1 text-xs">{tech}</Badge>
+          ))}
+        </div>
+      </div>
+      <CardFooter className="p-2 border-t bg-gray-50">
+        <div className="flex gap-1 w-full">
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex-1"
+            onClick={() => window.open(githubUrl, "_blank")}
+          >
+            <Github className="w-4 h-4 mr-1" />
+            Code
+          </Button>
+          {liveUrl && (
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex-1"
+              onClick={() => window.open(liveUrl, "_blank")}
+            >
+              <ExternalLink className="w-4 h-4 mr-1" />
+              Demo
+            </Button>
+          )}
+        </div>
+      </CardFooter>
+    </div>
+  );
+};
+
+export default ProjectCard;
+
+*/
+
+/*
 interface ProjectCardProps {
   project?: {
     title: string;
@@ -12,6 +70,7 @@ interface ProjectCardProps {
     technologies: string[];
     githubUrl: string;
     liveUrl: string;
+    onOpenModal: () => void;
   };
   onClick?: () => void;
 }
@@ -25,6 +84,7 @@ const ProjectCard = ({
     technologies: ["React", "TypeScript", "Tailwind"],
     githubUrl: "https://github.com",
     liveUrl: "https://example.com",
+  
   },
   onClick = () => {},
 }: ProjectCardProps) => {
@@ -78,3 +138,4 @@ const ProjectCard = ({
 };
 
 export default ProjectCard;
+*/
