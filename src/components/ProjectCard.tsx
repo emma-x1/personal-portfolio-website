@@ -3,6 +3,36 @@ import { Card, CardContent, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Github, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
+import { Project } from "/Users/emmaxing/personal-portfolio-website/src/types.tsx"; //
+
+interface ProjectCardProps {
+  project: Project;
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
+  return (
+    <div className="border border-gray-300 rounded-lg overflow-hidden shadow-lg">
+      <img src={project.imageUrl} alt={project.name} className="w-full h-48 object-cover" />
+      <div className="p-4">
+        <h3 className="text-xl font-bold mb-2">{project.name}</h3>
+        <p className="text-gray-700 mb-4">{project.description}</p>
+        <div className="flex flex-wrap gap-2 mb-4">
+          {project.technologies.map((tech, index) => (
+            <span key={index} className="bg-gray-200 text-gray-800 text-sm px-2 py-1 rounded">
+              {tech}
+            </span>
+          ))}
+        </div>
+        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline flex items-center">
+          <Github className="w-4 h-4 mr-1" />
+          View on GitHub
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default ProjectCard;
 
 
 /*

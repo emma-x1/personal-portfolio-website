@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
+import { Project } from "../types";
 
-const ProjectsSection: React.FC = () => {
-  const projects = [
+  const projects: Project[] = [
     {
-      title: 'Project 1',
-      description: 'Description 1',
-      imageUrl: 'image1.jpg',
-      technologies: ['React', 'TypeScript'],
-      githubUrl: 'https://github.com/project1',
-      liveUrl: 'https://project1.com',
-      onOpenModal: () => {}, // Ensure this property is included
+      name: "Project 1",
+      description: "Description of Project 1",
+      githubUrl: "https://github.com/project1",
+      technologies: ["React", "TypeScript"],
+      imageUrl: "https://via.placeholder.com/150",
     },
-    // Other projects
+    {
+      name: "Project 2",
+      description: "Description of Project 2",
+      githubUrl: "https://github.com/project2",
+      technologies: ["JavaScript", "CSS"],
+      imageUrl: "https://via.placeholder.com/150",
+    },
+    // Add more projects as needed
   ];
-
-  return (
-    <div>
-      {projects.map((project, index) => (
-        <ProjectCard
-          key={index}
-          title={project.title}
-          description={project.description}
-          imageUrl={project.imageUrl}
-          technologies={project.technologies}
-          githubUrl={project.githubUrl}
-          liveUrl={project.liveUrl}
-          onOpenModal={project.onOpenModal} // Ensure this property is included
-        />
-      ))}
-    </div>
-  );
-};
-
-export default ProjectsSection;
+  
+  const ProjectsSection: React.FC = () => {
+    return (
+      <section id="projects" className="py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-8">Projects</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard key={index} project={project} />
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+  
+  export default ProjectsSection;
 
 /*
 import ProjectModal from "./ProjectModal";

@@ -1,6 +1,43 @@
-import React, { useState } from "react";
+import React from "react";
 import ProjectCard from "./ProjectCard";
+import { Project } from "/Users/emmaxing/personal-portfolio-website/src/types.tsx"; //
 
+const projects: Project[] = [
+  {
+    name: "Project 1",
+    description: "Description of Project 1",
+    githubUrl: "https://github.com/project1",
+    technologies: ["React", "TypeScript"],
+    imageUrl: "https://via.placeholder.com/150",
+  },
+  {
+    name: "Project 2",
+    description: "Description of Project 2",
+    githubUrl: "https://github.com/project2",
+    technologies: ["JavaScript", "CSS"],
+    imageUrl: "https://via.placeholder.com/150",
+  },
+  // Add more projects as needed
+];
+
+const ProjectsGrid: React.FC = () => {
+  return (
+    <section id="projects" className="py-12">
+      <div className="container mx-auto px-4">
+        <h2 className="text-3xl font-bold mb-8">Projects</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project, index) => (
+            <ProjectCard key={index} project={project} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ProjectsGrid;
+
+/*
 const ProjectsGrid: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
